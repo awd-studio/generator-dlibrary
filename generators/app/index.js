@@ -33,7 +33,8 @@ module.exports = class extends Generator {
         name: 'drupalCore',
         message: 'Choose Drupal core:',
         default: drupal7,
-        choices: [drupal7, drupal8]
+        // choices: [drupal7, drupal8] // ToDo: Realize Drupal 8 version
+        choices: [drupal7]
       },
       {
         name: 'moduleNameHuman',
