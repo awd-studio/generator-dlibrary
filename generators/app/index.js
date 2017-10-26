@@ -98,11 +98,6 @@ module.exports = class extends Generator {
         default: 'master'
       },
       {
-        name: 'libraryExtractPreffix',
-        message: 'Library extracting preffix:',
-        default: 'vue-' // ToDo: Delete!
-      },
-      {
         name: 'libraryFile',
         message: 'Library include File:',
         validate: function(answer) {
@@ -178,12 +173,12 @@ module.exports = class extends Generator {
       libraryFile: this.props.libraryFile,
       libraryRepo: this.props.libraryRepo,
       libraryRepoBranch: this.props.librarylibraryRepoBranch,
-      libraryRepoDownload:
-        this.props.libraryRepo + '/archive/' + this.props.libraryRepoBranch + '.zip',
       libraryVersionFile: this.props.libraryVersionFile,
       libraryVersionPattern: this.props.libraryVersionPattern,
       libraryVersionLines: this.props.libraryVersionLines,
-      libraryExtractPreffix: this.props.libraryExtractPreffix,
+      libraryRepoDownload:
+        this.props.libraryRepo + '/archive/' + this.props.libraryRepoBranch + '.zip',
+      libraryExtractPreffix: this.props.libraryRepo.split('/').pop() + '-',
       moduleNameMachine: this.moduleNameMachine,
       moduleNameDash: this.moduleNameMachine.replace(/_/, '-'),
       moduleNameHuman: this.props.moduleNameHuman,

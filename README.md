@@ -1,4 +1,5 @@
-# generator-dlibrary [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-dlibrary [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] 
+
 > Drupal Library integrate Generator
 
 ## Installation
@@ -34,5 +35,3 @@ MIT © [Anton Karpov](https://github.com/awd-studio)
 [travis-url]: https://travis-ci.org/awd-studio/generator-dlibrary
 [daviddm-image]: https://david-dm.org/awd-studio/generator-dlibrary.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/awd-studio/generator-dlibrary
-[coveralls-image]: https://coveralls.io/repos/awd-studio/generator-dlibrary/badge.svg
-[coveralls-url]: https://coveralls.io/r/awd-studio/generator-dlibrary
