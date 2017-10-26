@@ -1,6 +1,6 @@
 {
   "name": "generator-dlibrary",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Drupal Library integrate Generator",
   "homepage": "https://github.com/awd-studio/generator-dmodule",
   "author": {
