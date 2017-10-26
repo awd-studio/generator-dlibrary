@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * The module file.
+ *
+ * Implements main module hooks.
+ */
+
+define('<%= moduleNameUpper %>_PATH', drupal_get_path('module', '<%= moduleNameMachine %>'));
+define('<%= moduleNameUpper %>_LIBRARY', '<%= moduleNameMachine %>');
+define('<%= moduleNameUpper %>_NAME', '<%= libraryName %>');
+define('<%= moduleNameUpper %>_URL', '<%= libraryUrl %>');
+define('<%= moduleNameUpper %>_DOWNLOAD_URL', '<%= libraryUrlDownload %>');
+
+/**
+ * Implements hook_libraries_info().
+ */
+function <%= moduleNameMachine %>_libraries_info() {
+  return array(
+    <%= moduleNameUpper %>_LIBRARY => array(
+      'name'              => <%= moduleNameUpper %>_NAME,
+      'vendor url'        => <%= moduleNameUpper %>_URL,
+      'download url'      => <%= moduleNameUpper %>_DOWNLOAD_URL,
+      'version arguments' => array(
+        'file'    => '<%= libraryVersionFile %>',
+        'pattern' => '/<%= libraryVersionPattern %>/',
+        'lines'   => <%= libraryVersionLines %>,
+      ),
+      'files'             => array(
+        '<%= libraryType %>}' => array(
+          '<%= libraryFile %>}',
+        ),
+      ),
+    ),
+  );
+}

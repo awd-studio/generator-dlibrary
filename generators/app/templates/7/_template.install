@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Check installation requirements.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function <%= moduleNameUpper %>_LIBRARY_requirements($phase) {
+  $requirements = array();
+
+  if ($phase == 'runtime') {
+    $t       = get_t();
+    $lib     = $t('<%= moduleNameUpper %>_NAME library');
+    $library = libraries_detect(<%= moduleNameUpper %>_LIBRARY);
+
+    if ($library && !empty($library['installed'])) {
+      $requirements[<%= moduleNameUpper %>_LIBRARY] = array(
+        'title'    => $lib,
+        'value'    => $library['version'],
+        'severity' => REQUIREMENT_OK,
+      );
+    }
+    else {
+      $requirements[<%= moduleNameUpper %>_LIBRARY] = array(
+        'title'       => $lib,
+        'value'       => $library ? $library['error'] : $t('Not found'),
+        'description' => $library ? $library['error message'] : '',
+        'severity'    => REQUIREMENT_ERROR,
+      );
+    }
+  }
+
+  return $requirements;
+}

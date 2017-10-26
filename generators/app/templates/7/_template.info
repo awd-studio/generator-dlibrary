@@ -1,0 +1,7 @@
+name        = <%= moduleNameHuman %>
+description = <%= moduleDescription %>
+package     = <%= modulePackage %>
+version     = <%= drupalCore %>.x-1.x-dev
+core        = <%= drupalCore %>.x
+<% if (moduleDependencies) { %>
+<%= moduleDependencies %><% } %>

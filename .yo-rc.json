@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Anton Karpov",
+      "authorEmail": "awd.com.ua@gmail.com",
+      "authorUrl": "https://github.com/awd-studio"
+    }
+  }
+}
