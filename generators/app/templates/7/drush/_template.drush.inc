@@ -5,7 +5,7 @@
  *   drush integration for <%= moduleNameMachine %>.
  */
 
-define('<%= moduleNameUpper %>_NAME_DOWNLOAD_URI', '<%= libraryUrlDownload %>');
+define('<%= moduleNameUpper %>_NAME_DOWNLOAD_URI', '<%= libraryRepoDownload %>');
 define('<%= moduleNameUpper %>_NAME_DOWNLOAD_PREFIX', '<%= libraryExtractPreffix %>');
 
 /**
@@ -55,7 +55,7 @@ function <%= moduleNameMachine %>_drush_command() {
 function <%= moduleNameMachine %>_drush_help($section) {
   switch ($section) {
     case 'drush:<%= moduleNameDash %>-download':
-      return dt('Download and install the <%= libraryName %> library from <%= libraryUrlDownload %>, default location is sites/all/libraries.');
+      return dt('Download and install the <%= libraryName %> library from <%= libraryRepoDownload %>, default location is sites/all/libraries.');
   }
 }
 

@@ -62,18 +62,6 @@ module.exports = class extends Generator {
         choices: ['js', 'php']
       },
       {
-        name: 'libraryFile',
-        message: 'Library File (with path):',
-        validate: function(answer) {
-          if (answer.length < 1) {
-            return chalk.bgRed('This option is required!');
-          }
-
-          return true;
-        },
-        default: 'vue/vue.min.js'
-      },
-      {
         name: 'libraryName',
         message: 'Library Name:',
         validate: function(answer) {
@@ -86,8 +74,8 @@ module.exports = class extends Generator {
         default: 'Vue.js' // ToDo: Delete!
       },
       {
-        name: 'libraryUrl',
-        message: 'Library homepage URL:',
+        name: 'libraryRepo',
+        message: 'Library GitHub repository URL:',
         validate: function(answer) {
           if (answer.length < 1) {
             return chalk.bgRed('This option is required!');
@@ -95,11 +83,11 @@ module.exports = class extends Generator {
 
           return true;
         },
-        default: 'https://vue_js.org/' // ToDo: Delete!
+        default: 'https://github.com/vuejs/vue' // ToDo: Delete!
       },
       {
-        name: 'libraryUrlDownload',
-        message: 'Library archive Download URL:',
+        name: 'libraryRepoBranch',
+        message: 'Library repository branch:',
         validate: function(answer) {
           if (answer.length < 1) {
             return chalk.bgRed('This option is required!');
@@ -107,7 +95,24 @@ module.exports = class extends Generator {
 
           return true;
         },
-        default: 'https://github.com/vuejs/vue/archive/master.zip' // ToDo: Delete!
+        default: 'master'
+      },
+      {
+        name: 'libraryExtractPreffix',
+        message: 'Library extracting preffix:',
+        default: 'vue-' // ToDo: Delete!
+      },
+      {
+        name: 'libraryFile',
+        message: 'Library include File:',
+        validate: function(answer) {
+          if (answer.length < 1) {
+            return chalk.bgRed('This option is required!');
+          }
+
+          return true;
+        },
+        default: 'dist/vue.min.js' // ToDo: Delete!
       },
       {
         name: 'libraryVersionFile',
@@ -119,7 +124,7 @@ module.exports = class extends Generator {
 
           return true;
         },
-        default: 'vue/vue.min.js' // ToDo: Delete!
+        default: 'dist/vue.min.js' // ToDo: Delete!
       },
       {
         name: 'libraryVersionPattern',
@@ -150,11 +155,6 @@ module.exports = class extends Generator {
         default: 2 // ToDo: Delete!
       },
       {
-        name: 'libraryExtractPreffix',
-        message: 'Library extraction preffix:',
-        default: 'vue-' // ToDo: Delete!
-      },
-      {
         type: 'confirm',
         name: 'drushCommand',
         message: 'Implement Drush Command?'
@@ -173,11 +173,13 @@ module.exports = class extends Generator {
      */
     this.data = {
       drupalCore: this.props.drupalCore,
+      libraryName: this.props.libraryName,
       libraryType: this.props.libraryType,
       libraryFile: this.props.libraryFile,
-      libraryName: this.props.libraryName,
-      libraryUrl: this.props.libraryUrl,
-      libraryUrlDownload: this.props.libraryUrlDownload,
+      libraryRepo: this.props.libraryRepo,
+      libraryRepoBranch: this.props.librarylibraryRepoBranch,
+      libraryRepoDownload:
+        this.props.libraryRepo + '/archive/' + this.props.libraryRepoBranch + '.zip',
       libraryVersionFile: this.props.libraryVersionFile,
       libraryVersionPattern: this.props.libraryVersionPattern,
       libraryVersionLines: this.props.libraryVersionLines,

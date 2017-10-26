@@ -8,12 +8,12 @@
 /**
  * Implements hook_requirements().
  */
-function <%= moduleNameUpper %>_LIBRARY_requirements($phase) {
+function <%= moduleNameMachine %>_requirements($phase) {
   $requirements = array();
 
   if ($phase == 'runtime') {
     $t       = get_t();
-    $lib     = $t('<%= moduleNameUpper %>_NAME library');
+    $lib     = $t('<%= moduleNameHuman %> library');
     $library = libraries_detect(<%= moduleNameUpper %>_LIBRARY);
 
     if ($library && !empty($library['installed'])) {

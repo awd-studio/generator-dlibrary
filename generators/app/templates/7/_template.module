@@ -10,8 +10,8 @@
 define('<%= moduleNameUpper %>_PATH', drupal_get_path('module', '<%= moduleNameMachine %>'));
 define('<%= moduleNameUpper %>_LIBRARY', '<%= moduleNameMachine %>');
 define('<%= moduleNameUpper %>_NAME', '<%= libraryName %>');
-define('<%= moduleNameUpper %>_URL', '<%= libraryUrl %>');
-define('<%= moduleNameUpper %>_DOWNLOAD_URL', '<%= libraryUrlDownload %>');
+define('<%= moduleNameUpper %>_URL', '<%= libraryRepo %>');
+define('<%= moduleNameUpper %>_DOWNLOAD_URL', '<%= libraryRepoDownload %>');
 
 /**
  * Implements hook_libraries_info().
